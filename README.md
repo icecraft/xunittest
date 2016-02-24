@@ -60,7 +60,8 @@ test_1 (__main__.TestSuit1)
 Traceback (most recent call last):
   File "tt.py", line 6, in test_1
     self.assertTrue(1 > 2)
-AssertionError: False is not true                                 [ PASSED ]    test_2 (__main__.TestSuit1)
+AssertionError: False is not true                                 
+[ PASSED ]    test_2 (__main__.TestSuit1)
 ----------------------------------------------------------------------
 Ran 2 tests in 0.000s
 
