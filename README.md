@@ -1,6 +1,7 @@
-          Based On Python unittest framwork
+##     Based On Python unittest framwork
 
 实例代码如下：
+```python
 import xunittest
  
 class TestSuit1(xunittest.TestCase):
@@ -21,20 +22,20 @@ class TestSuit2(xunittest.TestCase):
  
 if __name__ == '__main__':
   xunittest.main()
-
-1. 增加交互式功能：
+```
+### 1. 增加交互式功能：
    如下例所示， 用命令行参数 -i 运行测试脚本会进入交互式模式。 
    交互式模式 目前支持 支持5 个命令：
-               help             --- 打印帮助信息（交互式命令列表）
-	       suite            --- 打印所有的 TestSuit 名字
-	       test	        --- 打印所有的 TestCase 名字以及每个 TestCase 的执行结果
-	       run  names       --- if names in str(TestSuit) 则运行该 TestCase， 
+* 1         help             --- 打印帮助信息（交互式命令列表）
+* 2	       suite            --- 打印所有的 TestSuit 名字
+* 3	       test	        --- 打印所有的 TestCase 名字以及每个 TestCase 的执行结果
+*	4       run  names       --- if names in str(TestSuit) 则运行该 TestCase， 
 				    even nams is not in  str(TestSuit) but names is in str(TestCase) will also this TestCase
-	       exit             --- 退出测试脚本
-			   
+*	5       exit             --- 退出测试脚本
+
 lisp@bogon:~/src$python tt.py -i
 
->>>>help
+```>>>>help
   test
   suite
   run
@@ -54,12 +55,12 @@ TestSuit2
   test_12                                            [ Not Run]                                        
 
 >>>>run TestSuit1
-[ FAILED ]                                        test_1 (__main__.TestSuit1)
+[FAILED ] 
+test_1 (__main__.TestSuit1)
 Traceback (most recent call last):
   File "tt.py", line 6, in test_1
     self.assertTrue(1 > 2)
-AssertionError: False is not true
-[ PASSED ]                                        test_2 (__main__.TestSuit1)
+AssertionError: False is not true                                 [ PASSED ]    test_2 (__main__.TestSuit1)
 ----------------------------------------------------------------------
 Ran 2 tests in 0.000s
 
@@ -67,16 +68,17 @@ Ran 2 tests in 0.000s
 
 >>>>test
 TestSuit1
-  test_1                                             [ FAILED ]                             
+  test_1                                        
+                                                     [ FAILED ]                             
   test_2                                             [ PASSED ]                             
 TestSuit2
   test_11                                            [ Not Run]                                        
   test_12                                            [ Not Run]                                        
 
 >>>>exit
+```
 
-
-2. 美化输出测试结果
+### 2. 美化输出测试结果
    测试结果的输出风格类似与 gtest
 
-
+### 3.保留了交互式下测试用例的执行结果
